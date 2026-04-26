@@ -1,0 +1,21 @@
+# Build artifacts
+**/bin/
+**/obj/
+
+# Docker-related files
+.dockerignore
+Dockerfile
+**/compose.yaml
+
+# Source control
+.git
+.gitignore
+
+# IDE-specific folders
+.vs/
+.vscode/
+**/launchSettings.json
+
+# Web development (if applicable)
+**/node_modules/
+**/wwwroot/lib/

@@ -1,0 +1,34 @@
+services:
+  ui:
+    build:
+      context: ./frontend/ui/.
+    image: ui
+    container_name: ui
+    ports:
+      - 1234:80
+
+  api:
+    build:
+      context: ./backend/api/.
+    image: api
+    container_name: api
+    ports:
+      - 8080:8080
+
+  database:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    container_name: database
+    environment:
+      - ACCEPT_EULA=true
+      - MSSQL_SA_PASSWORD=Str0ngS@P@ssw0rd02
+    ports:
+      - 1433:1433
+
+  database-seed:
+    depends_on: [database]
+    build:
+      context: database/.
+    container_name: database-seed
+    environment:
+      - ACCEPT_EULA=true
+      - SA_PASSWORD=Str0ngS@P@ssw0rd02
