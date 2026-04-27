@@ -22,8 +22,10 @@ jobs:
 
       - name: Create .env file
         run: echo "MSSQL_SA_PASSWORD=${{ secrets.MSSQL_SA_PASSWORD }}" > .env
+
       - name: Spin up database
         run: docker compose up -d database
+
       - name: Seed database
         run: |
           chmod +x ./database/wait-and-run.sh

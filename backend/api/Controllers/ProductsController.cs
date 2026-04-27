@@ -47,6 +47,7 @@ namespace api.Controllers
                 await _db.ExecuteAsync(sql, product);
                 return Created();
             }
+            
             return BadRequest("Invalid request");
         }
 
