@@ -6,7 +6,7 @@ on:
       - "main"
     paths:
       - "backend/**"
-      - "build-api.yml"
+      - "./build-api.yml"
 
   workflow_dispatch:
 
