@@ -20,7 +20,7 @@ services:
     container_name: database
     environment:
       - ACCEPT_EULA=true
-      - MSSQL_SA_PASSWORD=x
+      - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
     ports:
       - 1433:1433
 
@@ -31,4 +31,4 @@ services:
     container_name: database-seed
     environment:
       - ACCEPT_EULA=true
-      - SA_PASSWORD=x
+      - SA_PASSWORD=${MSSQL_SA_PASSWORD}
